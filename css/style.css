@@ -1,5 +1,7 @@
+:root {
+  --font-color: rgb(65, 42, 42);
+}
 /* remove default styles */
-
 * {
   margin: 0;
   padding: 0;
@@ -7,3 +9,44 @@
 }
 
 /* header */
+header {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-auto-rows: 1;
+  background-color: aquamarine;
+  padding: .5rem;
+}
+
+header h1 {
+  grid-column: 2 / 4;
+  color: var(--font-color);
+}
+
+header ul {
+  /* grid-column: 4 / -1; */
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, auto);
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+header ul li a:hover {
+  background: rgb(7, 212, 144);
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+header aside {
+  justify-self: center;
+  align-self: center;
+}
