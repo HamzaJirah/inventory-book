@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inventory Book</title>
+  <link rel="stylesheet" href="font/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <header>
+      <h1>Inventory Book</h1>
+      <ul>
+        <li><a href="#"><i class="fas fa-info"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-plus-square"></i> Create Inventory</a></li>
+        <li><a href="#"><i class="fas fa-list"></i> View Inventory</a></li>
+      </ul>
+    </header>
+    <!-- content -->
+    <main>
+      <section>
+        <form id="inventory-list">
+          <div>
+            <label for="item">Item</label>
+            <input type="text" id="item">
+          </div>
+          <div>
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity">
+          </div>
+          <div>
+            <label for="agent">Agent</label>
+            <input type="text" id="agent">
+          </div>
+          <div>
+            <input type="submit" value="Add Item">
+          </div>
+        </form>
+      </section>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Agent</th>
+              <th>Remove Item</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-content"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
