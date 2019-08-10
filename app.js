@@ -10,7 +10,6 @@ function UI(){}
 
 // get form submission
 document.querySelector('#inventory-list').addEventListener('submit', e => {
-  console.log(e);
 
   e.preventDefault();
 });
