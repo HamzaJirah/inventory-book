@@ -50,3 +50,65 @@ header aside {
   justify-self: center;
   align-self: center;
 }
+
+header aside:hover {
+  cursor: pointer;;
+}
+
+/* Main */
+main {
+  margin: 1rem 1rem 0 1rem;
+}
+
+main section form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+form div {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  justify-self: center;
+}
+
+form div input {
+  width: 55rem;
+  outline: none;
+  height: 2.5rem;
+  border-radius: .4rem;
+}
+
+form div label {
+  font-size: 1.2rem;
+}
+
+form div input[type="text"]{
+  border: .1rem solid grey;
+}
+
+form div input[type="text"]:focus {
+  border: .1rem solid rgb(7, 212, 144);
+}
+
+form div input[type="submit"]{
+  border: none;
+  background: blue;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+form div input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+/* main table section */
+
+/* mobile design */
+@media (max-width: 768px){
+  header ul {
+    display: none;
+  }
+}
