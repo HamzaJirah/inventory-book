@@ -105,6 +105,41 @@ form div input[type="submit"]:hover {
 }
 
 /* main table section */
+main section:nth-child(2){
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  justify-content: center;
+}
+
+table{
+  width: 55rem;
+}
+
+table, thead {
+  border: .1rem solid grey;
+}
+
+thead tr th {
+  padding: .5rem;
+}
+
+thead {
+  background: rgb(7, 212, 144);
+}
+
+tbody tr:nth-child(even) {
+  background: aquamarine;
+}
+
+tbody tr td {
+  text-align: center;
+  padding: .5rem;
+  color: var(--font-color);
+}
+
+
+
 
 /* mobile design */
 @media (max-width: 768px){
