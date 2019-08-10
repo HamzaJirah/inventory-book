@@ -28,6 +28,13 @@ UI.prototype.addItemToInventory = function(laptop) {
   tableBody.appendChild(row);
 }
 
+// clear input fields prototype
+UI.prototype.clearInputFields = function(){
+  document.querySelector('#item').value = '';
+  document.querySelector('#quantity').value = '';
+  document.querySelector('#agent').value = '';
+}
+
 // get form submission
 document.querySelector('#inventory-list').addEventListener('submit', e => {
   const item = document.querySelector('#item').value;
@@ -42,6 +49,9 @@ document.querySelector('#inventory-list').addEventListener('submit', e => {
 
   // add item to UI 
   ui.addItemToInventory(laptop);
+
+  // clear input fields
+  ui.clearInputFields();
   
   e.preventDefault();
 });

@@ -138,6 +138,14 @@ tbody tr td {
   color: var(--font-color);
 }
 
+tbody tr td i {
+  color: red;
+}
+
+tbody tr td i:hover {
+  cursor: pointer;
+}
+
 
 
 
