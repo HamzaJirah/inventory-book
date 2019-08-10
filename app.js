@@ -47,11 +47,18 @@ document.querySelector('#inventory-list').addEventListener('submit', e => {
   // instantiate UI class
   const ui = new UI();
 
-  // add item to UI 
-  ui.addItemToInventory(laptop);
-
-  // clear input fields
-  ui.clearInputFields();
+  // validate form field
+  if(item === '' || quantity === '' || agent === ''){
+    // display error message
+    ui.displayAlert('Please fill in all fields', 'error');
+  } else {  
+    // add item to UI 
+    ui.addItemToInventory(laptop);
+    // display success message
+    ui.displayAlert('item added successfully', 'success');
+    // clear input fields
+    ui.clearInputFields();
+  }
   
   e.preventDefault();
 });
