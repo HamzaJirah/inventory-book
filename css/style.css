@@ -57,7 +57,31 @@ header aside:hover {
 
 /* Main */
 main {
-  margin: 1rem 1rem 0 1rem;
+  margin: 2rem 1rem 0 1rem;
+}
+
+main section:nth-child(1){
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+}
+
+/* alert div created in DOM */
+main section > div  {
+  justify-self: center;
+  width: 55rem;
+  text-align: center;
+  color: #fff;
+  margin: 1rem 0;
+  padding: .7rem;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
 }
 
 main section form {
@@ -145,8 +169,6 @@ tbody tr td i {
 tbody tr td i:hover {
   cursor: pointer;
 }
-
-
 
 
 /* mobile design */

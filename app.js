@@ -28,6 +28,32 @@ UI.prototype.addItemToInventory = function(laptop) {
   tableBody.appendChild(row);
 }
 
+// display alert
+UI.prototype.displayAlert = function(message, className){
+  // create div element 
+  const div = document.createElement('div');
+
+  // add class name to div
+  div.className = `alert ${className}`;
+
+  // create text node 
+  div.appendChild(document.createTextNode(message));
+
+  // get div parent element
+  const formSection = document.querySelector('#form-section')
+
+  // get div sibling element
+  const form = document.querySelector('#inventory-list');
+
+  // append div to parent 
+  formSection.insertBefore(div, form)
+
+  // dismiss alert in 3secs
+  setTimeout(function(){
+    document.querySelector('.alert').remove();
+  }, 3000)
+}
+
 // clear input fields prototype
 UI.prototype.clearInputFields = function(){
   document.querySelector('#item').value = '';
