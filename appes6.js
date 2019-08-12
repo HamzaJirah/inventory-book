@@ -7,3 +7,7 @@ class Item {
   }
 }
 
+// UI class
+class UI {
+
+}
