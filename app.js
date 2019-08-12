@@ -61,7 +61,14 @@ UI.prototype.clearInputFields = function(){
   document.querySelector('#agent').value = '';
 }
 
-// get form submission
+// delete item from inventory
+UI.prototype.deleteItem = function(target){
+  if(target.classList.contains('fa-trash')){
+    target.parentElement.parentElement.remove();
+  }
+}
+
+// event listener to get form submission
 document.querySelector('#inventory-list').addEventListener('submit', e => {
   const item = document.querySelector('#item').value;
   const quantity = document.querySelector('#quantity').value;
@@ -88,3 +95,18 @@ document.querySelector('#inventory-list').addEventListener('submit', e => {
   
   e.preventDefault();
 });
+
+// event listener to delete item
+document.querySelector('#inventory-content').addEventListener('click', e => {
+  
+  // instantiate UI object 
+  const ui = new UI();
+
+  // invoke delete item prototype
+  ui.deleteItem(e.target);
+
+  // show alert
+  ui.displayAlert('Item removed successfully', 'success');
+
+  e.preventDefault();
+})
