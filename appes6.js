@@ -9,5 +9,23 @@ class Item {
 
 // UI class
 class UI {
+  // add item
+  addItemToInventory(){
 
+  }
+
+  // show alert
+  displayAlert(){
+
+  }
+
+  // clear input fields
+  clearInputFields(){
+
+  }
+
+  // delete item 
+  deleteItem(){
+    
+  }
 }
