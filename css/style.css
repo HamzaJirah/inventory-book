@@ -37,7 +37,12 @@ header ul li {
 
 header ul li a {
   text-decoration: none;
+  font-size: 1rem;
   color: var(--font-color);
+}
+
+header ul li a i {
+  margin-right: 1rem;
 }
 
 header ul li a:hover {
@@ -69,13 +74,34 @@ header aside:hover {
 
 .side-menu span i{
   color: red;
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: none;
   margin: .5rem 0 1rem .5rem;
 }
 
+.side-menu span i:hover {
+  cursor: pointer;
+}
+
 .side-menu ul {
+  margin-left: .5rem;
   display: grid;
+  gap: 1rem;
+  grid-auto-flow: row;
+}
+
+.side-menu ul li {
+  list-style: none;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  font-size: inherit;
+  color: #fff;
+}
+
+.side-menu ul li a i{
+  margin-right: 1rem;
 }
 
 /* Main */
