@@ -159,3 +159,4 @@ document.querySelector('#inventory-content').addEventListener('click', e => {
 
   e.preventDefault();
 })
+
