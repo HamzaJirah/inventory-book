@@ -63,18 +63,53 @@ class UI {
 
 // Local Storage
 class Store {
-  getItems(){
 
+  static getItems(){
+    let laptops;
+    if(localStorage.getItem('laptops') === null){
+      laptops = [];
+    } else {
+      laptops = JSON.parse(localStorage.getItem('laptops'));
+    }
+
+    return laptops;
   }
 
-  displayItems(){
+  static displayItems(){
+    const laptops = Store.getItems();
 
+    laptops.forEach(laptop => {
+      // instantiate ui object from UI class
+      const ui = new UI();
+
+      // add laptop to ui 
+      ui.addItemToInventory(laptop);
+    });
   }
 
-  addItem(){
-    
+  static addItem(laptop){
+    const laptops = Store.getItems();
+
+    laptops.push(laptop);
+
+    localStorage.setItem('laptops', JSON.stringify(laptops));
+  }
+
+  static removeItem(agent){
+    const laptops = Store.getItems();
+
+    laptops.forEach((laptop, index) => {
+      if(laptop.agent === agent){
+        laptops.splice(index, 1);
+      }
+    });
+    // set local storage again 
+    localStorage.setItem('laptops', JSON.stringify(laptops));
   }
 }
+
+// DOM load event to add laptop/item to ui from the local storage
+document.addEventListener('DOMContentLoaded', Store.displayItems);
 
 // event listener to get form submission
 document.querySelector('#inventory-list').addEventListener('submit', e => {
@@ -96,6 +131,8 @@ document.querySelector('#inventory-list').addEventListener('submit', e => {
   } else {  
     // add item to UI 
     ui.addItemToInventory(laptop);
+    // add item to local storage
+    Store.addItem(laptop)
     // display success message
     ui.displayAlert('item added successfully', 'success');
     // clear input fields
@@ -111,8 +148,11 @@ document.querySelector('#inventory-content').addEventListener('click', e => {
   // instantiate UI object 
   const ui = new UI();
 
-  // invoke delete item prototype
+  // invoke delete item(from ui) prototype
   ui.deleteItem(e.target);
+
+  // remove item from local storage
+  Store.removeItem(e.target.parentElement.previousElementSibling.textContent);
 
   // show alert
   ui.displayAlert('Item removed successfully', 'success');
