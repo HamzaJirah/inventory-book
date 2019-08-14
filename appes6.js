@@ -61,6 +61,20 @@ class UI {
   }
 }
 
+// Local Storage
+class Store {
+  getItems(){
+
+  }
+
+  displayItems(){
+
+  }
+
+  addItem(){
+    
+  }
+}
 
 // event listener to get form submission
 document.querySelector('#inventory-list').addEventListener('submit', e => {
