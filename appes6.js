@@ -160,3 +160,44 @@ document.querySelector('#inventory-content').addEventListener('click', e => {
   e.preventDefault();
 })
 
+
+// Side Menu 
+class Menu {
+
+  static menuShowHide(e){
+    if(e.target.classList.contains('fa-bars')){
+      Menu.displaySideMenu();
+    } else if(e.target.classList.contains('modal-container') || e.target.classList.contains('fa-window-close')){
+      Menu.closeSideMenu();
+    }
+  }
+
+  static displaySideMenu(){
+    let modal = document.querySelector('.modal-container');
+    let sideMenu = document.querySelector('.side-menu');
+    let hamburgerIcon = document.querySelector('.fa-bars');
+    modal.style.display = 'block';
+    sideMenu.style.display = 'block';
+    hamburgerIcon.style.display = 'none';
+  }
+
+  static closeSideMenu(){
+    let modal = document.querySelector('.modal-container');
+    let sideMenu = document.querySelector('.side-menu');
+    let hamburgerIcon = document.querySelector('.fa-bars');
+    modal.style.display = 'none';
+    sideMenu.style.display = 'none';
+    hamburgerIcon.style.display = 'block';
+  }
+}
+
+// select all side menu components
+const SideMenuComp = document.querySelectorAll('.side-menu-comp');
+
+SideMenuComp.forEach(menu => {
+  menu.addEventListener('click', Menu.menuShowHide);
+})
+
+
+
+
