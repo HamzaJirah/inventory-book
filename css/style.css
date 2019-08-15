@@ -187,6 +187,10 @@ main section:nth-child(2){
   width: 100%;
 }
 
+/* main section table {
+  justify-self: center;
+} */
+
 table, thead {
   border: .1rem solid grey;
 }
@@ -232,6 +236,15 @@ tbody tr td i:hover {
 
 
 /* mobile design */
+@media (min-width: 860px){
+  main section form div {
+    max-width: 40rem;
+  }
+
+  main section table {
+    max-width: 50rem;
+  }
+}
 @media (min-width: 769px){
   header aside {
     display: none;
